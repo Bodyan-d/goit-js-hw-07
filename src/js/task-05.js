@@ -5,8 +5,8 @@ inputRef.addEventListener('input', onOutput);
 
 function onOutput(event) {
     if (event.currentTarget.value === '') {
-        return outputRef.textContent = 'незнакомец';
+        outputRef.textContent = 'незнакомец';
+        return
     }
-
     outputRef.textContent = event.currentTarget.value;
 };

@@ -14,20 +14,13 @@ const images = [{
 
 const ulRef = document.querySelector('#gallery')
 
-const createElement = (images) => {
-    let allString = '';
 
-    for (const image of images) {
-        const elementToAdd = `<li><img class="gallery-image" src="${image.url}" alt="${image.alt}"></li>`;
-        allString += elementToAdd;
-    };
+let allString = '';
 
-
+const imagesRefs = images.map(image => {
+    const elementToAdd = `<li><img class="gallery-image" src="${image.url}" alt="${image.alt}"></li>`;
+    allString += elementToAdd;
     return allString;
-};
-
-const imagesRefs = createElement(images);
-
-console.log(imagesRefs);
+});;
 
 ulRef.insertAdjacentHTML('afterbegin', imagesRefs);

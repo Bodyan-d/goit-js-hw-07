@@ -7,10 +7,12 @@ inputRef.addEventListener('input', addOrrRemoveClass);
 function addOrrRemoveClass(event) {
 
     if (event.currentTarget.value.length > validLength) {
+        inputRef.classList.remove('validЫ');
         inputRef.classList.add('invalid')
-    } else {
-        inputRef.classList.remove('invalid');
-        inputRef.classList.add('valid');
+        return;
     };
+
+    inputRef.classList.remove('invalid');
+    inputRef.classList.add('valid');
 
 };

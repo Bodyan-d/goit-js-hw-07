@@ -1,5 +1,5 @@
 const categoriesRef = document.querySelector('#categories');
-const allCategories = categoriesRef.children;
+const allCategories = document.querySelectorAll('.item');
 
 
 //1
@@ -9,20 +9,14 @@ console.log(categoriesItem(allCategories));
 //1
 
 //2
-const nameAndGuantity = (allCategories) => {
+console.log(typeof(allCategories));
+allCategories.forEach(categorie => {
+    const categorieName = categorie.firstElementChild;
+    const categorieElemets = categorie.lastElementChild;
 
-    for (const nameCategorie of allCategories) {
-        const categorieName = nameCategorie.firstElementChild;
-        const categorieElemets = nameCategorie.lastElementChild;
+    const categorieNameText = categorieName.textContent;
+    const categorieQuantity = categorieElemets.children.length;
 
-        const categorieNameText = categorieName.textContent;
-        const categorieQuantity = categorieElemets.children.length;
-
-        console.log(`Категория: ${categorieNameText} \nКоличество элементов: ${categorieQuantity}`);
-
-    };
-
-};
-
-nameAndGuantity(allCategories);
+    console.log(`Категория: ${categorieNameText} \nКоличество элементов: ${categorieQuantity}`);
+});
 //2
